@@ -26,6 +26,7 @@ jobs:
       
   deu:
     name: Auto-Grade Code Changes
+    runs-on: windows-latest
     needs: un
     steps:
       - name: Set the value
