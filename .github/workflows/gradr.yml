@@ -6,7 +6,7 @@ on:
     - main
 
 jobs:    
-  autograde:
+  un:
     name: Auto-Grade Code Changes
     runs-on: ubuntu-latest
     
@@ -23,3 +23,18 @@ jobs:
         id: step_two
         run: |
           printf '%s\n' "$action_state" # This will output 'yellow'
+      
+  deu:
+    name: Auto-Grade Code Changes
+    runs-on: ubuntu-latest
+    
+
+    steps:
+      - name: Set the value
+        id: step_one
+        run: |
+          echo "action_state=Brellow" >> "$GITHUB_ENV"
+      - name: Use the value
+        id: step_two
+        run: |
+          printf '%s\n' "$action_state" # This will output 'Brellow'
