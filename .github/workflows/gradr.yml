@@ -26,7 +26,7 @@ jobs:
       
   deu:
     name: Auto-Grade Code Changes
-    runs-on: windows-latest
+    runs-on: ubuntu-latest
     needs: un
     steps:
       - name: Set the value
@@ -37,3 +37,5 @@ jobs:
         id: step_two
         run: |
           printf '%s\n' "$action_state" # This will output 'Brellow'
+          echo $GITHUB_ENV
+          shell: bash
