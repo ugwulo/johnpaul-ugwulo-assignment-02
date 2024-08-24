@@ -27,13 +27,12 @@ jobs:
   deu:
     name: Auto-Grade Code Changes
     runs-on: ubuntu-latest
-    
-
+    depends-on: un
     steps:
       - name: Set the value
         id: step_one
         run: |
-          echo "action_state=Brellow" >> "$GITHUB_ENV"
+          echo "${{ github.actor }}" >> "$GITHUB_ENV"
       - name: Use the value
         id: step_two
         run: |
