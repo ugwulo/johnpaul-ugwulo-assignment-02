@@ -32,10 +32,9 @@ jobs:
       - name: Set the value
         id: step_one
         run: |
-          echo {{ github.actor }} >> "$GITHUB_ENV"
+          echo ${{ github.actor }} >> "$GITHUB_ENV"
       - name: Use the value
         id: step_two
         run: |
           printf '%s\n' "$action_state" # This will output 'Brellow'
           echo $GITHUB_ENV
-          shell: bash
